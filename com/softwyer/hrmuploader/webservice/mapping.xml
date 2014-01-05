@@ -1,0 +1,117 @@
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.codehaus.org/mapping.dtd">
+
+<mapping>
+
+	<class name="com.softwyer.hrmuploader.webservice.Webservice">
+		<map-to xml="webservice" />
+
+		<field name="object" collection="hashtable">
+			<bind-xml name="object">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" collection="array"
+						type="com.softwyer.hrmuploader.webservice.Property">
+						<bind-xml name="prop" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+
+		<field name="Collection" type="com.softwyer.hrmuploader.webservice.Collection"
+			collection="arraylist">
+			<bind-xml name="collection" />
+		</field>
+	</class>
+
+	<class name="com.softwyer.hrmuploader.webservice.WristUnitData">
+		<map-to xml="wristunit-data" />
+
+		<field name="Properties" type="com.softwyer.hrmuploader.webservice.Property"
+			collection="arraylist">
+			<bind-xml name="prop" />
+		</field>
+
+		<field name="UserSettings" type="com.softwyer.hrmuploader.webservice.PolarObject"
+			collection="arraylist">
+			<bind-xml name="object" />
+		</field>
+
+		<field name="Collection" type="com.softwyer.hrmuploader.webservice.Collection"
+			collection="array">
+			<bind-xml name="collection" />
+		</field>
+
+	</class>
+
+	<class name="com.softwyer.hrmuploader.webservice.Property">
+		<map-to xml="prop" />
+
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" />
+		</field>
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" />
+		</field>
+		<field name="value" type="java.lang.String">
+			<bind-xml name="value" node="text" />
+		</field>
+	</class>
+
+	<class name="com.softwyer.hrmuploader.webservice.PolarObject">
+		<map-to xml="object" />
+
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" />
+		</field>
+
+		<field name="Props" type="com.softwyer.hrmuploader.webservice.Property"
+			collection="arraylist">
+			<bind-xml name="prop" />
+		</field>
+	</class>
+
+	<class name="com.softwyer.hrmuploader.webservice.Collection">
+		<map-to xml="collection" />
+
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" />
+		</field>
+
+		<field name="Items" type="com.softwyer.hrmuploader.webservice.Item"
+			collection="arraylist">
+			<bind-xml name="item" />
+		</field>
+
+	</class>
+
+	<class name="com.softwyer.hrmuploader.webservice.Item">
+		<map-to xml="item" />
+
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" />
+		</field>
+		<field name="index" type="java.lang.String">
+			<bind-xml name="index" node="attribute" />
+		</field>
+
+		<field name="Props" type="com.softwyer.hrmuploader.webservice.Property"
+			collection="arraylist">
+			<bind-xml name="prop" />
+		</field>
+
+		<field name="PolarObjects" type="com.softwyer.hrmuploader.webservice.PolarObject"
+			collection="arraylist">
+			<bind-xml name="object" />
+		</field>
+
+		<field name="Collections" type="com.softwyer.hrmuploader.webservice.Collection"
+			collection="arraylist">
+			<bind-xml name="collection" />
+		</field>
+
+
+	</class>
+
+</mapping>
